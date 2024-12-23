@@ -1,0 +1,63 @@
+<!--Chi tiết từng phòng-->
+
+{% extends 'layout/base.html' %}
+
+{% block title %} Xem phòng {% endblock %}
+
+{% block content %}
+<div style="margin-bottom: 50px">
+    <h1 class="text-center p-5">XEM PHÒNG</h1>
+    <div style="width: 80%; margin: 0 auto">
+        <div class="row mt-5" style="display: flex; justify-content: space-evenly">
+            <div class="col-md-5 col-xs-12">
+                <img src="{{ room.image }}" class="img-fluid rounded"/>
+                <h3>{{ room.name }}</h3>
+                <p>{{ room.description }}</p>
+                <p><b>Diện tích phòng: </b>161m2</p>
+                <p><b>Loại giường: </b>01 giường đôi cực lớn</p>
+                <p><b>Tầm nhìn: </b>hướng biển, có ban công cực lớn</p>
+                <p><b>Giường phụ: </b>có thể đáp ứng (tính phí)</p>
+                <h3>Giá phòng: {{ "{:,.0f}".format(room.price) }} VND</h3>
+
+            </div>
+            <div class="col-md-5 col-xs-12">
+                <div style="max-width: 600px; margin: 0px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; font-family: Arial, sans-serif;">
+                    <form>
+                        <div style="margin-bottom: 10px;">
+                            <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px;">Họ và
+                                Tên:</label>
+                            <input type="text" id="name" name="name"
+                                   style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;"
+                                   required>
+                        </div>
+
+                        <div style="margin-bottom: 10px;">
+                            <label for="check-in" style="display: block; font-weight: bold; margin-bottom: 5px;">Ngày
+                                Nhận
+                                Phòng:</label>
+                            <input type="date" id="check-in" name="check-in"
+                                   style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;"
+                                   required>
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <label for="check-out" style="display: block; font-weight: bold; margin-bottom: 5px;">Ngày
+                                Trả
+                                Phòng:</label>
+                            <input type="date" id="check-out" name="check-out"
+                                   style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 4px;"
+                                   required>
+                        </div>
+
+                        <div style="margin-bottom: 10px;">
+                            <button
+                                    style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                                <a href="/room/booking">Đặt Phòng</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

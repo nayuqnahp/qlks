@@ -1,0 +1,27 @@
+<!--Trang chủ-->
+
+{% extends 'layout/base.html' %}
+
+{% block title %}Trang chủ{% endblock %}
+
+{% block content %}
+<div class="" style="width: 96%; margin: 50px auto">
+    <div class="row">
+        {% if current_user.is_authenticated %}
+            <h2 style="text-align: center;">Xin Chào, {{current_user}}!</h2>
+
+        {% endif %}
+        {% for r in rooms %}
+                <div class="col-xs-12 col-md-6" style="padding: 8px">
+                    <div class="card">
+                        <img src="{{ r.image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ r.name }}</h5>
+                            <a href="/room/{{ r.id }}" class="btn btn-center btn-dark d-flex justify-content-center">Xem phòng</a>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

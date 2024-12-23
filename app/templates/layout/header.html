@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <img src="https://cdn.haitrieu.com/wp-content/uploads/2021/09/Logo-DH-Mo-TPHCM-OU.png" style="width: 5%">
+        <a class="navbar-brand" href="/">ATA Hotel</a>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item d-flex justify-content-center">
+                    <a class="nav-link" href="/">Trang chủ</a>
+                    <a class="nav-link" href="/booking">Đặt phòng</a>
+                    {% if current_user.is_authenticated %}
+
+                    <a class="nav-link" href="/createform">Lập phiếu</a>
+                    <a class="nav-link" href="/pay">Thanh toán</a>
+                    {% endif %}
+
+                </li>
+            </ul>
+            <form class="d-flex" role="search" method="get" action="/login" style="margin-right: 10px">
+                <button class="btn btn-outline-light" type="submit">Đăng nhập</button>
+            </form>
+
+            {% if current_user.is_authenticated %}
+
+            <form class="d-flex" role="search" method="get" action="/logout" style="margin-right: 50px">
+                <button class="btn btn-outline-light" type="submit">Đăng xuất</button>
+            </form>
+
+            {% endif %}
+
+
+            <form class="d-flex" role="search" method="get" action="/" style="margin-right: 10px">
+                <input class="form-control me-2" type="search" name="pricefrom" placeholder="Giá từ"
+                       aria-label="Search">
+                <input class="form-control me-2" type="search" name="priceto" placeholder="Đến" aria-label="Search">
+                <button class="btn btn-outline-light"
+                        style="background-color: darkblue; color: white; border: 2px solid white;" type="submit"
+                        onmouseover="this.style.color='white';" onmouseout="this.style.color='';">Tìm
+                </button>
+            </form>
+            <form class="d-flex" role="search" method="get" action="/">
+                <input class="form-control me-2" type="search" name="kw" placeholder="Tìm theo tên" aria-label="Search">
+                <button class="btn btn-outline-light"
+                        style="background-color: darkblue; color: white; border: 2px solid white;" type="submit"
+                        onmouseover="this.style.color='white';" onmouseout="this.style.color='';">Tìm
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
