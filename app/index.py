@@ -19,7 +19,7 @@ def index():
 
 @app.route('/room/<id>')
 def view_room(id):
-    return render_template('viewroom.html', room=dao.get_room_by_id(id))
+    return render_template('viewRoom.html', room=dao.get_room_by_id(id))
 
 
 @app.route('/admin/login', methods=['post'])
@@ -105,7 +105,7 @@ def create_form():
 @app.route('/createform/roomform/<id>')
 def room_form(id):
 
-    return render_template('roomform.html',  roomform = dao.get_roomform_by_id(id))
+    return render_template('roomForm.html',  roomform = dao.get_roomform_by_id(id))
 @app.route('/createform/<id>', methods =['GET', 'POST'])
 def delete_form(id):
 
@@ -120,7 +120,7 @@ def delete_form(id):
     else:
         return "Hủy xóa dòng dữ liệu!"
 
-    return render_template('createform.html', roomform = roomform)
+    return render_template('createForm.html', roomform = roomform)
 
 @app.route('/pay')
 def pay():
