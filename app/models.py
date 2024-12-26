@@ -26,7 +26,7 @@ class User(db.Model, UserMixin):
     name = Column(String(50), nullable=False)
     address = Column(String(100), nullable=False)
     phone = Column(String(100), nullable=False)
-    user_role = Column(Enum(UserRoleEnum), default=UserRoleEnum.STAFF)
+    user_role = Column(Enum(UserRoleEnum), default=UserRoleEnum.CUSTOMER)
 
     def __str__(self):
         return self.name
