@@ -89,68 +89,69 @@ if __name__ == '__main__':
     from app import app
     with app.app_context():
         import hashlib
+        db.create_all()
 
-        # user1 = User(username='admin',
-        #              password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
-        #              name='Admin',
-        #              address='HCM',
-        #              phone='0849165932',
-        #              user_role=UserRoleEnum.ADMIN)
-        # user2 = User(username='quyan',
-        #              password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
-        #              name='QuyAn',
-        #              address='Hoc Mon',
-        #              phone='0392995499',
-        #              user_role=UserRoleEnum.STAFF)
-        # user3 = User(username='nguyentuyen',
-        #              password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
-        #              name='NguyenTuyen',
-        #              address='Vung Tau',
-        #              phone='0775438606',
-        #              user_role=UserRoleEnum.STAFF)
-        # user4 = User(username='thienan',
-        #              password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
-        #              name='ThienAn',
-        #              address='Go Vap',
-        #              phone='0977751951',
-        #              user_role=UserRoleEnum.STAFF)
-        # db.session.add_all([user1, user2, user3, user4])
-        # db.session.commit()
+        user1 = User(username='admin',
+                     password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
+                     name='Admin',
+                     address='HCM',
+                     phone='0849165932',
+                     user_role=UserRoleEnum.ADMIN)
+        user2 = User(username='quyan',
+                     password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
+                     name='QuyAn',
+                     address='Hoc Mon',
+                     phone='0392995499',
+                     user_role=UserRoleEnum.STAFF)
+        user3 = User(username='nguyentuyen',
+                     password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
+                     name='NguyenTuyen',
+                     address='Vung Tau',
+                     phone='0775438606',
+                     user_role=UserRoleEnum.STAFF)
+        user4 = User(username='thienan',
+                     password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
+                     name='ThienAn',
+                     address='Go Vap',
+                     phone='0977751951',
+                     user_role=UserRoleEnum.STAFF)
+        db.session.add_all([user1, user2, user3, user4])
+        db.session.commit()
 
-        # type1 = TypeRoom(name='Phòng President', price=5000000)
-        # type2 = TypeRoom(name='Phòng Premium', price=3000000)
-        # type3 = TypeRoom(name='Phòng Luxury', price=2000000)
-        # type4 = TypeRoom(name='Phòng Studio', price=1500000)
-        # type5 = TypeRoom(name='Phòng Executive', price=1000000)
-        # db.session.add_all([type1, type2, type3, type4, type5])
-        # db.session.commit()
+        type1 = TypeRoom(name='Phòng President', price=5000000)
+        type2 = TypeRoom(name='Phòng Premium', price=3000000)
+        type3 = TypeRoom(name='Phòng Luxury', price=2000000)
+        type4 = TypeRoom(name='Phòng Studio', price=1500000)
+        type5 = TypeRoom(name='Phòng Executive', price=1000000)
+        db.session.add_all([type1, type2, type3, type4, type5])
+        db.session.commit()
 
-        # room1 = Room(name='Phòng President Suite Hướng biển',
-        #              description='THE ROOM FOR THE PRESIDENT, THE HEADS OF STATE',
-        #              image='https://rosaalbaresort.com/wp-content/uploads/2023/10/RAS3-2048x1365.jpg',
-        #              price=5000000,
-        #              typeroom_id=1)
-        # room2 = Room(name='Phòng Premium Deluxe Hướng Biển',
-        #              description='A DISTINGUISHED YET COMFORTABLE AMBIENCE',
-        #              image='https://rosaalbaresort.com/wp-content/uploads/2023/10/PDT11-scaled.jpg',
-        #              price=3000000,
-        #              typeroom_id=2)
-        # room3 = Room(name='Phòng Luxury Deluxe Hướng Biển',
-        #              description='INSPIRE ROMANTIC MEMORIES WITH A TRULY CHARMING RETREAT',
-        #              image='https://rosaalbaresort.com/wp-content/uploads/2023/10/SD5-2048x1365.jpg',
-        #              price=2000000,
-        #              typeroom_id=3)
-        # room4 = Room(name='Phòng Studio Deluxe Hướng Biển',
-        #              description='INSPIRE ROMANTIC MEMORIES WITH A TRULY CHARMING RETREAT',
-        #              image='https://rosaalbaresort.com/wp-content/uploads/2023/10/ST4-2048x1365.jpg',
-        #              price=1500000,
-        #              typeroom_id=4)
-        # room5 = Room(name='Phòng Executive Deluxe Hướng Biển',
-        #              description='THE TASTEFULLY DECORATED OFFER A HIGH LEVEL OF LUXURY',
-        #              image='https://rosaalbaresort.com/wp-content/uploads/2023/10/ES3-2048x1365.jpg',
-        #              price=1000000,
-        #              typeroom_id=5)
-        # db.session.add_all([room1, room2, room3, room4, room5])
-        # db.session.commit()
-        # db.create_all()
+        room1 = Room(name='Phòng President Suite Hướng biển',
+                     description='THE ROOM FOR THE PRESIDENT, THE HEADS OF STATE',
+                     image='https://rosaalbaresort.com/wp-content/uploads/2023/10/RAS3-2048x1365.jpg',
+                     price=5000000,
+                     typeroom_id=1)
+        room2 = Room(name='Phòng Premium Deluxe Hướng Biển',
+                     description='A DISTINGUISHED YET COMFORTABLE AMBIENCE',
+                     image='https://rosaalbaresort.com/wp-content/uploads/2023/10/PDT11-scaled.jpg',
+                     price=3000000,
+                     typeroom_id=2)
+        room3 = Room(name='Phòng Luxury Deluxe Hướng Biển',
+                     description='INSPIRE ROMANTIC MEMORIES WITH A TRULY CHARMING RETREAT',
+                     image='https://rosaalbaresort.com/wp-content/uploads/2023/10/SD5-2048x1365.jpg',
+                     price=2000000,
+                     typeroom_id=3)
+        room4 = Room(name='Phòng Studio Deluxe Hướng Biển',
+                     description='INSPIRE ROMANTIC MEMORIES WITH A TRULY CHARMING RETREAT',
+                     image='https://rosaalbaresort.com/wp-content/uploads/2023/10/ST4-2048x1365.jpg',
+                     price=1500000,
+                     typeroom_id=4)
+        room5 = Room(name='Phòng Executive Deluxe Hướng Biển',
+                     description='THE TASTEFULLY DECORATED OFFER A HIGH LEVEL OF LUXURY',
+                     image='https://rosaalbaresort.com/wp-content/uploads/2023/10/ES3-2048x1365.jpg',
+                     price=1000000,
+                     typeroom_id=5)
+        db.session.add_all([room1, room2, room3, room4, room5])
+        db.session.commit()
+
 

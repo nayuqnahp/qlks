@@ -6,7 +6,7 @@ from flask_login import logout_user, current_user
 from flask import redirect, request
 from app.models import UserRoleEnum
 import hashlib
-admin = Admin(app=app, name='OU HOTEL', template_mode='bootstrap4')
+admin = Admin(app=app, name='ATA HOTEL', template_mode='bootstrap4')
 
 
 class AuthenticatedUser(BaseView):
